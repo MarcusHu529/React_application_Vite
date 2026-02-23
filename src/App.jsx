@@ -50,6 +50,7 @@ function App() {
     <>
       <Header />
       <BattleStatus />
+      
       <div>
         <img
           src={gokuVsVegeta}
@@ -58,11 +59,21 @@ function App() {
           style={{ width: "400px", height: "auto" }}
         />
       </div>
+
       <CharacterList />
+
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           Increase Power Level: {count}
         </button>
+        
+        <div style={{ marginTop: '20px' }}>
+          {count > 10 ? (
+            <h2 style={{ color: 'red' }}>IT'S OVER 9000!</h2>
+          ) : (
+            <p>Gathering energy: {count}</p>
+          )}
+        </div>
       </div>
     </>
   )

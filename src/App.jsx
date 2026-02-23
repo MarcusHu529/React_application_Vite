@@ -8,12 +8,21 @@ const characterForms = [
   { id: 3, name: 'Ultra Instinct', power: 'Godly', isSaiyan: true },
 ];
 
+function Header() {
+  return (
+    <header>
+      <h1>Dragon Ball</h1>
+    </header>
+  );
+}
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <Header />
       <div>
         <img
           src={gokuVsVegeta}

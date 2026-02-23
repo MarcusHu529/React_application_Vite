@@ -2,6 +2,13 @@ import { useState } from 'react'
 import gokuVsVegeta from './assets/goku-vs-vegeta.png'
 import './App.css'
 
+const characterForms = [
+  { id: 1, name: 'Base Form', power: 'Normal', isSaiyan: true },
+  { id: 2, name: 'Super Saiyan', power: 'High', isSaiyan: true },
+  { id: 3, name: 'Ultra Instinct', power: 'Godly', isSaiyan: true },
+];
+
+
 function App() {
   const [count, setCount] = useState(0)
 

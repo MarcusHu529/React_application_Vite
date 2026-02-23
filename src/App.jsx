@@ -16,6 +16,32 @@ function Header() {
   );
 }
 
+function CharacterList() {
+  return (
+    <div className="card">
+      <h3>Available Power Forms</h3>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {characterForms.map((form) => (
+          <li 
+            key={form.id} 
+            style={{ color: form.power === 'Godly' ? '#61dafb' : 'white', marginBottom: '10px' }}
+          >
+            {form.name} — Power Level: {form.power}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function BattleStatus() {
+  const isBattleActive = true;
+  return (
+    <div className="status-box">
+      {isBattleActive ? <h2>STATUS: IN COMBAT</h2> : <h2>STATUS: TRAINING</h2>}
+    </div>
+  );
+}
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +49,7 @@ function App() {
   return (
     <>
       <Header />
+      <BattleStatus />
       <div>
         <img
           src={gokuVsVegeta}
@@ -31,10 +58,10 @@ function App() {
           style={{ width: "400px", height: "auto" }}
         />
       </div>
-      <h1>Goku vs Vegeta</h1>
+      <CharacterList />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+          Increase Power Level: {count}
         </button>
       </div>
     </>
